@@ -1,14 +1,17 @@
 import React from 'react';
-import { CodeBlockProps } from './types';
+interface CodeBlockProps{
+    code:string;
+    language: string;
+}
 
-const CodeBlockProps: React.FC<CodeBlockProps> = ({ code, language }) => {
+const CodeBlock: React.FC<CodeBlockProps> = ({ code, language }) => {
     const getLanguageClass = (lang: string) => {
-        const classes: {
+        const classes: Record<string, string> = {
             javascript: 'bg-yellow-50 border-yellow-200',
             css: 'bg-blue-50 border-blue-200',
             html: 'bg-orange-50 border-orange-200',
         };
-        return classes[lang as keyof typeof classes] || 'bg-gray-50 border-gray-200';
+        return classes[lang] || 'bg-gray-50 border-gray-200';
     };
 
     return (
@@ -25,4 +28,4 @@ const CodeBlockProps: React.FC<CodeBlockProps> = ({ code, language }) => {
     );
 };
 
-export default CodeBlockProps;
+export default CodeBlock;

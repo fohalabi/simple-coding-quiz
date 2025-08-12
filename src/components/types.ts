@@ -3,8 +3,8 @@ export interface Question {
     title: string;
     code: string;
     language: string;
-    options: string;
-    CorrectAnswer: number;
+    options: string[];
+    correctAnswer: number;
     explanation: string;
 }
 
@@ -13,15 +13,10 @@ export interface ProgressBarProps {
     total: number;
 }
 
-export interface CodeBlockProps{
-    code:string;
-    language: string;
-}
-
 export interface AnswerOptionsProps {
     options: string[];
     selectedAnswer: number  | null;
-    OnAnswerSelect: (index: number) => void;
+    onAnswerSelect: (index: number) => void;
 }
 
 export interface QuestionNavigationProps {
@@ -33,17 +28,11 @@ export interface QuestionNavigationProps {
 
 export interface NavigationButtonsProps {
     currentQuestion: number;
-    totalQuestion: number;
+    totalQuestions: number;
     selectedAnswers: (number | null)[];
     onPrevious: () => void;
     onNext: () => void;
     onSubmit: () => void;
-}
-
-export interface QuizQuestionProps {
-    question: Question;
-    selectedAnswer: number | null;
-    onAnswerSelect: (index: number) => void;
 }
 
 export interface QuizResultsProps {
