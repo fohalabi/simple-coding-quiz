@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import CodeReviewQuiz from './components/CodeReviewQuiz';
 
-function App() = {
+function App() {
   return (
     <div>
-      what is happening?
+      <CodeReviewQuiz />
     </div>
   )
 }
