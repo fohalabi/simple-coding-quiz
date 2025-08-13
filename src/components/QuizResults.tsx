@@ -40,7 +40,7 @@ const QuizResults: React.FC<QuizResultsProps> = ({ questions, selectedAnswers, o
                 </h3>
               </div>
               
-              <p className="text-gray-700 mb-4">{question.question}</p>
+              <p className="text-gray-700 mb-4">{question.queestion}</p>
               
               <div className="space-y-2 mb-4">
                 {question.options.map((option, optionIndex) => (
